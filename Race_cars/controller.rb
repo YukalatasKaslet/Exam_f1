@@ -25,6 +25,7 @@ class Controller
              RaceCar.new( "Banjo",     [6,8,6,7,9]       ),
              RaceCar.new( "Duck",      [10,12,11,10,11]  ) ]
     @view.test_cars(cars)
+    @view.table(cars)
     team_one = Team.new(cars)
     @view.test_team1
     search("Power", team_one)
@@ -74,6 +75,7 @@ class Controller
     @view.rules
     cars = new_team.cars
     @view.test_cars(cars)
+    @view.table(cars)
     @view.test_team_average_speed(new_team)
   end
 

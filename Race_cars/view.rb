@@ -73,4 +73,10 @@ class View
     system('clear')
   end
 
+  def table(cars)
+    cars.each do |car|
+      puts "#{car.name}\t#{car.car_level}"
+    end
+  end
+
 end#class View
