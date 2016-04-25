@@ -1,7 +1,7 @@
 require_relative 'model'
 require_relative 'view'
 
-class Controller
+class ControllerRaceCars
 
   def initialize
     @view = View.new
@@ -44,16 +44,21 @@ class Controller
   end
 
   def new_team
+    @view.rules
     cars = []
     i = 1
     while i != 5
       car = @view.instance_cars
-      if car.count > 5
+      if car[1].count != 5
+        return @view.error
+      elsif car.count != 5
         return @view.error
       end
       car[1].each do |e|
         if e.is_a? String
+          if e.to_i == 0
           return @view.error
+          end
         end
       end
       car = RaceCar.new(car[0], car[1])
@@ -72,7 +77,6 @@ class Controller
   end
 
   def test(new_team)
-    @view.rules
     cars = new_team.cars
     @view.test_cars(cars)
     @view.table(cars)
@@ -80,5 +84,3 @@ class Controller
   end
 
 end#class Controller
-
-Controller.new

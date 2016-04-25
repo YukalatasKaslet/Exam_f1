@@ -1,7 +1,7 @@
 require_relative 'model'
 require_relative 'view'
 
-class Controller
+class ControllerHerencia
   def initialize
     @view = View.new
     master
@@ -21,5 +21,3 @@ class Controller
   end
 
 end#class Controller
-
-Controller.new

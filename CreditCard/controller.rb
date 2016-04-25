@@ -1,7 +1,7 @@
 require_relative 'model'
 require_relative 'view'
 
-class Controller
+class ControllerCreditCard
 
   def initialize
     @view = View.new
@@ -28,5 +28,3 @@ class Controller
   end
 
 end#class
-
-Controller.new

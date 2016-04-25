@@ -19,6 +19,7 @@ class View
     cars.each_with_index do |car, index|
       puts "\tcar#{index + 1}: #{car.average_speed} m/s"
     end
+    puts "\n"
   end
 
   def test_team_average_speed(team)
@@ -49,7 +50,7 @@ class View
     car = []
     puts "Ingresa el nombre del carro"
     car << gets.chomp
-    puts "Ingresa sus tiempos"
+    puts "Ingresa sus 5 tiempos"
     t = gets.chomp
     t = t.split
     y = [car, t]
@@ -74,8 +75,11 @@ class View
   end
 
   def table(cars)
+    lineWidth = 30
+    puts " Name".ljust(lineWidth/2) + "| Nivel".ljust(lineWidth/2)
+    puts "---------------+---------------"
     cars.each do |car|
-      puts "#{car.name}\t#{car.car_level}"
+      puts " #{car.name}".ljust(lineWidth/2) + "| #{car.car_level}".ljust(lineWidth/2)
     end
   end
 
